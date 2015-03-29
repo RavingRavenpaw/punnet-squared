@@ -5,9 +5,9 @@ def cross():
     #l: Long hair
     #l is dominant to L
     #
-    #LL: Short haired cat
-    #Ll: Short haired cat
-    #ll: Long haired cat
+    #LL: Short haired cat - Homo. Dom.
+    #Ll: Short haired cat - Het. Dom.
+    #ll: Long haired cat - Homo. Rec.
     
     
     #1st cat
@@ -38,3 +38,7 @@ def cross():
         print("PLEASE PLACE DOMINANT ALLELES BEFORE RECESSIVE ALLELES")
         print("AND USE CORRECT CAPITALISATION")
         cat2Genotype = raw_input("Genotype of Cat 2: ")
+    #Let's do some math!
+    
+    genotypesList = [cat1Genotype, cat2Genotype]
+    print(genotypesList)
