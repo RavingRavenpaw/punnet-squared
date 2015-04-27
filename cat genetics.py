@@ -58,3 +58,15 @@ def cross():
     
     offspring = [(cat1Allele1 + cat2Allele1), (cat1Allele1 + cat2Allele2), (cat1Allele2 + cat1Allele1), (cat1Allele2 + cat2Allele2)]
     print(offspring)
+    
+    '''
+    #Make a table showing the cross
+    
+    #I was trying to make a table to show the cross (so basically a punnet swaure compsed
+    #of characters
+    #
+    #I'll finish this later or change it into something different, but I'm dropping it for now
+    print(" ",cat1Allele1," "," ",cat1Allele2," ",)
+    print("---------")
+    print("")
+    '''
