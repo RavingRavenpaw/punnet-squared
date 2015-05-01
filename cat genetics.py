@@ -58,8 +58,13 @@ def cross():
     
     offspring = [(cat1Allele1 + cat2Allele1), (cat1Allele1 + cat2Allele2), (cat1Allele2 + cat1Allele1), (cat1Allele2 + cat2Allele2)]
     print(offspring)
+
+    #From tut, will erase later.
+    #Using as reference to do stuff
+    print "If I add %d, %d, and %d I get %d." % (my_age, my_height, my_weight, my_age + my_height + my_weight)
     
-    '''
+    
+'''
     #Make a table showing the cross
     
     #I was trying to make a table to show the cross (so basically a punnet swaure compsed
@@ -69,4 +74,19 @@ def cross():
     print(" ",cat1Allele1," "," ",cat1Allele2," ",)
     print("---------")
     print("")
-    '''
+
+        
+
+
+
+    #By Sven Marnach on Stack Overflow
+    #http://stackoverflow.com/questions/8356501/python-format-tabular-output
+    def print_table(table):
+        col_width = [max(len(x) for x in col) for col in zip(*table)]
+        for line in table:
+            print "| " + " | ".join("{:{}}".format(x, col_width[i])
+                                for i, x in enumerate(line)) + " |"
+
+table = (offspring)
+print_table(table)
+'''
