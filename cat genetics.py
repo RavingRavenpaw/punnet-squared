@@ -58,10 +58,19 @@ def cross():
     
     offspring = [(cat1Allele1 + cat2Allele1), (cat1Allele1 + cat2Allele2), (cat1Allele2 + cat1Allele1), (cat1Allele2 + cat2Allele2)]
     print(offspring)
+    
+    offspring1 = (cat1Allele1 + cat2Allele1)
+    offspring2 =  (cat1Allele1 + cat2Allele2)
+    offspring3 = (cat1Allele2 + cat1Allele1)
+    offspring4 =  (cat1Allele2 + cat2Allele2)
 
     #From tut, will erase later.
     #Using as reference to do stuff
     print "If I add %d, %d, and %d I get %d." % (my_age, my_height, my_weight, my_age + my_height + my_weight)
+    
+    print "    %s  %s  " % (cat1Allele1, cat1Allele2)
+    print "%s  %s  %s  " % (cat2Allele1, offspring1, offspring2)
+    print "%s  %s  %s  " % (cat2Allele2, offspring3, offspring4)
     
     
 '''
