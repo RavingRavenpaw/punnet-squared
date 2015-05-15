@@ -45,9 +45,32 @@ def cross():
     
     #Combine the alleles into individual offspinrg
     offspring1 = (cat1Allele1 + cat2Allele1)
-    offspring2 =  (cat1Allele1 + cat2Allele2)
-    offspring3 = (cat1Allele2 + cat1Allele1)
+    offspring2 =  (cat1Allele2 + cat2Allele1)
+    offspring3 = (cat1Allele1 + cat2Allele2)
     offspring4 =  (cat1Allele2 + cat2Allele2)
+    
+    
+    #If the first allele is lowercase and the second is uppercase, switch the
+    #alleles around so that the uppercase allele is first.
+    
+    lowercase_letters = "abcdefghijklmnopqrstuvwxyz"
+    uppercase_letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    
+    #Kitten1
+    if cat1Allele1 in lowercase_letters and cat2Allele1 in uppercase_letters:
+            offspring1 = (cat2Allele1 + cat1Allele1)
+            
+    #Kitten2
+    if cat1Allele2 in lowercase_letters and cat2Allele1 in uppercase_letters:
+            offspring1 = (cat2Allele1 + cat1Allele2)
+            
+    #Kitten3
+    if cat1Allele1 in lowercase_letters and cat2Allele2 in uppercase_letters:
+            offspring1 = (cat2Allele2 + cat1Allele1)
+            
+    #Kitten4
+    if cat1Allele2 in lowercase_letters and cat2Allele2 in uppercase_letters:
+            offspring1 = (cat2Allele2 + cat1Allele2)
     
     #Print a table showing the results of the cross
     #
