@@ -17,16 +17,14 @@ def cross():
     
     #1st cat
     print("What is the genotype of the 1st cat?")
-    print("PLEASE PLACE DOMINANT ALLELES BEFORE RECESSIVE ALLELES")
-    print("AND USE CORRECT CAPITALISATION")
     cat1Genotype = raw_input("Genotype of Cat 1: ")
+    print("")
 
 
     #2nd cat
     print("What is the genotype of the 2nd cat?")
-    print("PLEASE PLACE DOMINANT ALLELES BEFORE RECESSIVE ALLELES")
-    print("AND USE CORRECT CAPITALISATION")
     cat2Genotype = raw_input("Genotype of Cat 2: ")
+    print("")
     genotypesList = [cat1Genotype, cat2Genotype]
     
     #Let's do some math!
