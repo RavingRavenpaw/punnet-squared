@@ -1,9 +1,14 @@
 import random
+#I'll be using this to make more realistic crosses later.
+#Read about it in the wiki. I start talking about stuff like percentages in crosses.
 
 def cross():
+    #BASIC INFO ON GENOTYPES, PHENOTYPES, AMD ALLELES
+    #
     #L: Short hair
     #l: Long hair
-    #l is dominant to L
+    #L is dominant to l
+    #Short hair is dominant to long hair
     #
     #LL: Short haired cat - Homo. Dom.
     #Ll: Short haired cat - Het. Dom.
@@ -11,34 +16,64 @@ def cross():
     
     
     #1st cat
-    print("Do you know the 1st cat's genotype or phenotype?")
-    print("If phenotype is used, punnet squares with all possible")
-    print("genotypes of the 1st cat will be created.")
-    print("Using genotype will only use the genotype you specify.")
+    print("What is the genotype of the 1st cat?")
+    cat1Genotype = raw_input("Genotype of Cat 1: ")
     print("")
-    typeUsed = raw_input("Type P for Phenotype or G for Genotype: ")
-    if typeUsed == ("G") or typeUsed == ("g"):
-        print("You are using genotype.")
-        print("What is the genotype of the 1st cat?")
-        print("PLEASE PLACE DOMINANT ALLELES BEFORE RECESSIVE ALLELES")
-        print("AND USE CORRECT CAPITALISATION")
-        cat1Genotype = raw_input("Genotype of Cat 1: ")
 
 
     #2nd cat
-    print("Do you know the 2nd cat's genotype or phenotype?")
-    print("If phenotype is used, punnet squares with all possible")
-    print("genotypes of the 2nd cat will be created.")
-    print("Using genotype will only use the genotype you specify.")
+    print("What is the genotype of the 2nd cat?")
+    cat2Genotype = raw_input("Genotype of Cat 2: ")
     print("")
-    typeUsed = raw_input("Type P for Phenotype or G for Genotype: ")
-    if typeUsed == ("G") or typeUsed == ("g"):
-        print("You are using genotype.")
-        print("What is the genotype of the 2nd cat?")
-        print("PLEASE PLACE DOMINANT ALLELES BEFORE RECESSIVE ALLELES")
-        print("AND USE CORRECT CAPITALISATION")
-        cat2Genotype = raw_input("Genotype of Cat 2: ")
-    #Let's do some math!
     
-    genotypesList = [cat1Genotype, cat2Genotype]
-    print(genotypesList)
+    #Let's do some math!
+    #Get alleles
+    
+    #Cat 1
+    cat1Allele1 = (cat1Genotype[:1])
+    cat1Allele2 = (cat1Genotype[1:2])
+    
+    #Cat 2
+    cat2Allele1 = (cat2Genotype[:1])
+    cat2Allele2 = (cat2Genotype[1:2])
+    
+    #Now to combine the alleles as a collective group of offspring
+    offspring = [(cat1Allele1 + cat2Allele1), (cat1Allele1 + cat2Allele2), (cat1Allele2 + cat1Allele1), (cat1Allele2 + cat2Allele2)]
+    
+    #Combine the alleles into individual offspinrg
+    offspring1 = (cat1Allele1 + cat2Allele1)
+    offspring2 =  (cat1Allele2 + cat2Allele1)
+    offspring3 = (cat1Allele1 + cat2Allele2)
+    offspring4 =  (cat1Allele2 + cat2Allele2)
+    
+    
+    #If the first allele is lowercase and the second is uppercase, switch the
+    #alleles around so that the uppercase allele is first.
+    
+    lowercase_letters = "abcdefghijklmnopqrstuvwxyz"
+    uppercase_letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    
+    #Kitten1
+    if cat1Allele1 in lowercase_letters and cat2Allele1 in uppercase_letters:
+            offspring1 = (cat2Allele1 + cat1Allele1)
+            
+    #Kitten2
+    if cat1Allele2 in lowercase_letters and cat2Allele1 in uppercase_letters:
+            offspring2 = (cat2Allele1 + cat1Allele2)
+            
+    #Kitten3
+    if cat1Allele1 in lowercase_letters and cat2Allele2 in uppercase_letters:
+            offspring3 = (cat2Allele2 + cat1Allele1)
+            
+    #Kitten4
+    if cat1Allele2 in lowercase_letters and cat2Allele2 in uppercase_letters:
+            offspring4 = (cat2Allele2 + cat1Allele2)
+    
+    #Print a table showing the results of the cross
+    #
+    #It's really basic atm, but it's padded and the data lines up
+    #correctly, so it doesn't matter. I'll make it look pretty
+    #later.
+    print "    %s  %s  " % (cat1Allele1, cat1Allele2)
+    print "%s  %s  %s  " % (cat2Allele1, offspring1, offspring2)
+    print "%s  %s  %s  " % (cat2Allele2, offspring3, offspring4)
