@@ -25,7 +25,6 @@ def cross():
     print("What is the genotype of the 2nd cat?")
     cat2Genotype = raw_input("Genotype of Cat 2: ")
     print("")
-    genotypesList = [cat1Genotype, cat2Genotype]
     
     #Let's do some math!
     #Get alleles
@@ -60,15 +59,15 @@ def cross():
             
     #Kitten2
     if cat1Allele2 in lowercase_letters and cat2Allele1 in uppercase_letters:
-            offspring1 = (cat2Allele1 + cat1Allele2)
+            offspring2 = (cat2Allele1 + cat1Allele2)
             
     #Kitten3
     if cat1Allele1 in lowercase_letters and cat2Allele2 in uppercase_letters:
-            offspring1 = (cat2Allele2 + cat1Allele1)
+            offspring3 = (cat2Allele2 + cat1Allele1)
             
     #Kitten4
     if cat1Allele2 in lowercase_letters and cat2Allele2 in uppercase_letters:
-            offspring1 = (cat2Allele2 + cat1Allele2)
+            offspring4 = (cat2Allele2 + cat1Allele2)
     
     #Print a table showing the results of the cross
     #
