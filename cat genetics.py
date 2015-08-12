@@ -77,3 +77,6 @@ def cross():
     print "    %s  %s  " % (cat1Allele1, cat1Allele2)
     print "%s  %s  %s  " % (cat2Allele1, offspring1, offspring2)
     print "%s  %s  %s  " % (cat2Allele2, offspring3, offspring4)
+    
+#Run the program once the file is executed
+cross()
