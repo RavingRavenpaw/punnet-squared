@@ -37,9 +37,6 @@ def cross():
     cat2Allele1 = (cat2Genotype[:1])
     cat2Allele2 = (cat2Genotype[1:2])
     
-    #Now to combine the alleles as a collective group of offspring
-    offspring = [(cat1Allele1 + cat2Allele1), (cat1Allele1 + cat2Allele2), (cat1Allele2 + cat1Allele1), (cat1Allele2 + cat2Allele2)]
-    
     #Combine the alleles into individual offspinrg
     offspring1 = (cat1Allele1 + cat2Allele1)
     offspring2 =  (cat1Allele2 + cat2Allele1)
