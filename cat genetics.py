@@ -74,17 +74,29 @@ def cross():
     if offspring2 != offspring1:
         genotype2 = offspring2
         numGenotypes += 1
-        genotypes.append(genotype2)    
+        genotypes.append(genotype2) 
+    else:
+        genotype2 = ""   
 
     if offspring3 != offspring2 and offspring3 != offspring1:
         genotype3 = offspring3
         numGenotypes += 1
         genotypes.append(genotype3)
+    else:
+        genotype3 = ""
 
     if offspring4 != offspring3 and offspring4 != offspring3 and offspring4 != offspring2 and offspring4 != offspring1:
         genotype4 = offspring4
         numGenotypes += 1
         genotypes.append(genotype4)
+    else:
+        genotype4 = ""
+
+    genotype1 = genotypes[0]
+    genotype2 = genotypes[1] if numGenotypes >= 2 else None
+    genotype3 = genotypes[2] if numGenotypes >= 3 else None
+    genotype4 = genotypes[3] if numGenotypes == 4 else None
+
 
     #Convert the list of genotypes to a string
     #and clean it up
@@ -93,10 +105,22 @@ def cross():
     genotypesStr = genotypesStr.replace("[", "")
     genotypesStr = genotypesStr.replace("]", "")
     genotypesStr = genotypesStr.replace("\'", "")
+
+    #Make offspring list
+    offspring = [offspring1, offspring2, offspring3, offspring4]
     
 
     #Calculate what percent of offpsring are what genotype
-    #[placeholder]
+    genotype1Amt = 0
+    genotype2Amt = 0
+    genotype3Amt = 0
+    genotype4Amt = 0
+
+    genotype1Amt = offspring.count(genotype1)
+    genotype2Amt = offspring.count(genotype2) if numGenotypes >= 2 else None
+    genotype3Amt = offspring.count(genotype3) if numGenotypes >= 3 else None
+    genotype4Amt = offspring.count(genotype4) if numGenotypes == 4 else None
+    
     
     #Print a table showing the results of the cross
     #
@@ -108,6 +132,11 @@ def cross():
     print("%s  %s  %s  " % (cat2Allele2, offspring3, offspring4))
     print("")
     print("Genotypes: %s" % genotypesStr)
+    print(str(genotype1Amt/4*100) + "% " + genotype1)
+    print(str(genotype2Amt/4*100) + "% " + genotype2) if numGenotypes >= 2 else None
+    print(str(genotype3Amt/4*100) + "% " + genotype3) if numGenotypes >= 3 else None
+    print(str(genotype4Amt/4*100) + "% " + genotype4) if numGenotypes == 4 else None
+
 
 def strCleanUp(oldStr):
     global newStr
